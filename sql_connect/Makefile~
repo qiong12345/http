@@ -1,0 +1,15 @@
+BIN=sql_connect
+SRC=sql_connect.cpp
+CC=g++
+INCLUDE=-I$(pwd)/mysql_lib/include 
+LIB_PATH=-L$(pwd)/mysql_lib/lib
+
+
+$(BIN):$(SRC)
+	$(CC) -o $@ $^ ${INCLUDE} ${LIB_PATH}
+
+.PHONY:clean
+clean:
+	rm -rf $(BIN)
+
+
